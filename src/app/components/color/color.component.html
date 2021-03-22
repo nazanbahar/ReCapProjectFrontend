@@ -1,0 +1,36 @@
+<!--1) Added Spinner...
+<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+</div>
+-->
+<!--2) Added DataLoaded...
+     <table *ngIf="dataLoaded!=true"class="table"></table> 
+-->
+<!-- 3) Metarials... 
+I. |*ngIf|*ngFor|<thead>|spinner|
+II. <thead> etiketi...
+<thead> etiketi HTML tablosunun başlık içeriğini gruplandımak için kullanılır.
+III. <spinner> return dönüş bilgisi 
+-->
+
+<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+</div>
+
+
+  <table *ngIf="dataLoaded==true"class="table">   
+  <thead>
+      <tr>
+          <th>id</th>
+          <th>RenkAdı</th>
+      </tr>
+  </thead>
+  
+
+  <tr *ngFor="let color of colors">
+      <td>{{color.id}}</td>
+      <td>{{color.colorName}}</td>
+  </tr>
+</table>
+
+
