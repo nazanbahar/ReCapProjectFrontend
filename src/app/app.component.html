@@ -1,4 +1,4 @@
-<!-- 
+<!--Lesson17: 
    <div class="container">
         <app-navi></app-navi>
         <div class="row">
@@ -15,20 +15,20 @@
         <router-outlet></router-outlet>
       </div>
       
- --> 
-  <div class="container">
-        <app-nav></app-nav>
-        <div class="row">
-          <div class="col-md-3">
-             <app-brand></app-brand>
-             <app-color></app-color>
-          </div>
-          <div class="col-md-9">
-            <app-customer></app-customer>
-            <app-car></app-car>
-            <app-rental></app-rental>
-            <app-user></app-user>
-          </div>
-        </div>
-      </div>
+ -->
+<!-- Lesson18: router-outlet yerini Değiştir. -->
+<div class="container">
+  <app-nav></app-nav>
+  <div class="row">
+    <div class="col-md-3">
+      <app-brand></app-brand>
+      <app-color></app-color>
+    </div>
+    <div class="col-md-9">
       <router-outlet></router-outlet>
+    </div>
+    <div>
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>

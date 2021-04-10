@@ -1,3 +1,19 @@
+<ul class="list-group">
+  <li [class]="getAllBrandClass()" routerLink="cars">Tüm Markalar</li>
+  <li
+    (click)="setCurrentBrand(brand)"
+    routerLink="cars/brand/{{ brand.id }}"
+    *ngFor="let brand of brands"
+    [class]="getCurrentBrandClass(brand)"> 
+    {{ brand.brandName }}
+  </li>
+</ul>
+
+<h6 *ngIf="currentBrand">{{ currentBrand.brandName }} seçtiniz</h6>
+
+
+
+<!-- ===================================================================================================== -->
 <!--1) Added Spinner...
 <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
     <span class="visually-hidden">Loading...</span>
@@ -12,7 +28,7 @@ II. <thead> etiketi...
 <thead> etiketi HTML tablosunun başlık içeriğini gruplandımak için kullanılır.
 III. <spinner> return dönüş bilgisi 
 -->
-
+<!-- 4) Lesson17 → Table
 <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
     <span class="visually-hidden">Loading...</span>
 </div>
@@ -32,3 +48,60 @@ III. <spinner> return dönüş bilgisi
       <td>{{brand.brandName}}</td>
   </tr>
 </table>
+-->
+<!--Lesson18: Tüm Markaları Listelemek-Step:1
+s1. ex. <ul class="list-group">
+    <li *ngFor = "let category of categories" 
+    class="list-group-item">{{category.categoryName}}</li>
+  </ul> 
+s2. 
+
+
+s3. SON HALI
+<ul class="list-group">
+   
+    <li [class]="getAllBrandClass()" routerLink ="cars">Tüm Markalar</li>
+    
+    <li (click)="setCurrentBrand(brand)" 
+    routerLink ="cars/brand/{{brand.brandId}}" 
+    *ngFor = "let brand of brands" 
+    [class]="getCurrentBrandClass(brand)">
+    {{brand.brandName}}</li>
+</ul>
+
+<h5 *ngIf="currentBrand" >{{currentBrand.brandName}} seçtiniz</h5> 
+
+-->
+<!-- 5) ListGroup
+s1. loop→ *ngFor | click on→ (click) | empty→ *ngIf |görsel: <li> class→ active| [class]="getCurrentCategoryClass(category)" |
+s2. loop→ *ngFor | 
+s3. click on→ (click) | 
+s4. empty→ *ngIf |
+s5. görsel: <li> class→ active ex. class="list-group-item active" |
+s6. Property Binding→ Seçili Kategoriyi Etkinleştirmek…→ getCurrentBrandClass(brand)
+[class]="getCurrentColorClass(color)">{{color.colorName}}
+s7.for Empty-Category
+<h5 *ngIf="currentColor" >{{currentColor.colorName}} seçtiniz</h5> 
+
+2. Code Sytnax
+<ul class="list-group">
+    <li 
+       (click)="setCurrentBrand(brand)"
+       routerLink ="cars/brand/{{brand.brandId}}" 
+       *ngFor = "let brand of brands" 
+       [class]="getCurrentBrandClass(brand)">{{brand.brandName}}
+    </li>
+</ul> 
+
+<h5 *ngIf="currentBrand" >{{currentBrand.brandName}} seçtiniz</h5>
+-->
+<!-- 6) ListGroup Listing All Cars
+ <li [class]="getAllBrandClass()" routerLink ="cars">Tüm Markalar</li>
+ -->
+<!-- 7) RouterLink
+s1. çift tırnak içinde verilen parametreye göre sayfada görüntülecektir.
+ex. routerLink="colors" → tüm Renkler | routerLink="cars" → tüm arabalar vb.
+s2. code:
+<li [class]="getAllColorClass()" routerLink="colors">Tüm Renkler</li>
+ --> 
+<!-- ===================================================================================================== -->

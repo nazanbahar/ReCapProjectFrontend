@@ -1,4 +1,18 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
+/* L18: added → "strictPropertyInitialization":false, */
+/* L18: Error-StackOverflow
+Error: 'File name differs from already included file name only in casing' on relative path with same casing
+bkz. https://stackoverflow.com/questions/51197940/file-name-differs-from-already-included-file-name-only-in-casing-on-relative-p
+s1.disable the "forceConsistentCasingInFileNames" in the tsconfig.json file.
+s2. {
+  "compilerOptions": {
+    ...
+    "forceConsistentCasingInFileNames": false,
+    ...
+  }
+}
+
+*/
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -6,6 +20,7 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "strictPropertyInitialization":false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,

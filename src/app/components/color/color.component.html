@@ -1,3 +1,20 @@
+<ul class="list-group">
+  <li [class]="getAllColorClass()" routerLink="cars">Tüm Renkler</li>
+
+  <li
+    (click)="setCurrentColor(color)"
+    routerLink="cars/color/{{ color.id }}"
+    *ngFor="let color of colors"
+    [class]="getCurrentColorClass(color)"
+  >
+    {{ color.colorName }}
+  </li>
+</ul>
+
+<h6 *ngIf="currentColor">{{ currentColor.colorName }} seçtiniz</h6>
+
+
+<!-- ===================================================================================== --> 
 <!--1) Added Spinner...
 <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
     <span class="visually-hidden">Loading...</span>
@@ -12,7 +29,7 @@ II. <thead> etiketi...
 <thead> etiketi HTML tablosunun başlık içeriğini gruplandımak için kullanılır.
 III. <spinner> return dönüş bilgisi 
 -->
-
+<!-- 4) Table GetAll-List
 <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
     <span class="visually-hidden">Loading...</span>
 </div>
@@ -32,5 +49,23 @@ III. <spinner> return dönüş bilgisi
       <td>{{color.colorName}}</td>
   </tr>
 </table>
-
-
+-->
+<!-- 5) ListGroup
+s1. loop→ *ngFor | 
+s2. click on→ (click) | 
+s3. empty→ *ngIf |
+s4. görsel: <li> class→ active ex. class="list-group-item active" |
+s5. Property Binding→ Seçili Kategoriyi Etkinleştirmek…→ getCurrentColorClass(color)
+[class]="getCurrentColorClass(color)">{{color.colorName}}
+s6. routerLink → filter by selected category 
+routerLink ="cars/color/{{color.colorId}}" 
+s7.for the Empty-Category issue
+<h5 *ngIf="currentColor" >{{currentColor.colorName}} seçtiniz</h5> 
+ -->
+<!-- 6) RouterLink
+s1. çift tırnak içinde verilen parametreye göre sayfada görüntülecektir.
+ex. routerLink="colors" → tüm Renkler | routerLink="cars" → tüm arabalar vb.
+s2. code:
+<li [class]="getAllColorClass()" routerLink="colors">Tüm Renkler</li>
+ -->
+<!-- ===================================================================================== --> 

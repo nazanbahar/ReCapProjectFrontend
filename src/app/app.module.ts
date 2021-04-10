@@ -1,39 +1,34 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+//API'ye İstekde Bulunmak-Requesting the API-manuel added...
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrandComponent } from './components/brand/brand.component';
-import { CarComponent } from './components/car/car.component';
 import { ColorComponent } from './components/color/color.component';
-import { CustomerComponent } from './components/customer/customer.component';
-import { RentalComponent } from './components/rental/rental.component';
-import { UserComponent } from './components/user/user.component';
-import { CarDtoComponent } from './components/car-dto/car-dto.component';
-import { CustomerDtoComponent } from './components/customer-dto/customer-dto.component';
-import { RentalDtoComponent } from './components/rental-dto/rental-dto.component';
-import { CarimageComponent } from './components/carimage/carimage.component';
-import { UseroperationclaimComponent } from './components/useroperationclaim/useroperationclaim.component';
-import { OperationclaimComponent } from './components/operationclaim/operationclaim.component';
 import { NavComponent } from './components/nav/nav.component';
-import{HttpClientModule} from '@angular/common/http'; //API'ye İstekde Bulunmak-Requesting the API-manuel added...
+import { HttpClientModule } from '@angular/common/http';
+import { CarDetailComponent } from './components/car-detail/car-detail.component';
+import { CustomerDetailComponent } from './components/customer-detail/customer-detail.component';
+import { RentalDetailComponent } from './components/rental-detail/rental-detail.component';
+import { CarsComponent } from './components/cars/cars.component';
+import { CustomersComponent } from './components/customers/customers.component';
+import { RentalsComponent } from './components/rentals/rentals.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BrandComponent,
-    CarComponent,
     ColorComponent,
-    CustomerComponent,
-    RentalComponent,
-    UserComponent,
-    CarDtoComponent,
-    CustomerDtoComponent,
-    RentalDtoComponent,
-    CarimageComponent,
-    UseroperationclaimComponent,
-    OperationclaimComponent,
     NavComponent,
+    CarDetailComponent,
+    CustomerDetailComponent,
+    RentalDetailComponent,
+    CarsComponent,
+    CustomersComponent,
+    RentalsComponent,
+    FooterComponent,
+    
   ],
   imports: [
     BrowserModule,

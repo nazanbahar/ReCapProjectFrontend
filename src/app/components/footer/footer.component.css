@@ -1,0 +1,13 @@
+  .flex-container {
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: rgb(9, 48, 87);
+  }
+
+  .flex-container>div {
+    color: white;
+  }
+
+ 
